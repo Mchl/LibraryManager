@@ -5,4 +5,8 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+      <WarningsAsErrors>;NU1605;CS8618</WarningsAsErrors>
+    </PropertyGroup>
+
 </Project>
