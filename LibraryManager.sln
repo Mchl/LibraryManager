@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryManager.Core", "Libr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryManager.Infrastructure", "LibraryManager.Infrastructure\LibraryManager.Infrastructure.csproj", "{612A867B-7650-49C4-A46D-6F5C11ECDF8F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryManager", "LibraryManager\LibraryManager.csproj", "{ABC66486-A248-4120-931D-1D35D8FE2923}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{612A867B-7650-49C4-A46D-6F5C11ECDF8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{612A867B-7650-49C4-A46D-6F5C11ECDF8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{612A867B-7650-49C4-A46D-6F5C11ECDF8F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABC66486-A248-4120-931D-1D35D8FE2923}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABC66486-A248-4120-931D-1D35D8FE2923}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABC66486-A248-4120-931D-1D35D8FE2923}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABC66486-A248-4120-931D-1D35D8FE2923}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
