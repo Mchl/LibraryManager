@@ -1,5 +1,7 @@
 ﻿using System;
 using LibraryManager.Core;
+using LibraryManager.Infrastructure.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace LibraryManager.CLI
 {
@@ -15,19 +17,22 @@ namespace LibraryManager.CLI
         Title = "Site Reliability Engineering"
       };
 
-      var catalogueItem1 = new CatalogueItem(
-        book1,
-        CatalogueItemStatus.Available
-      );
-      
-      var catalogueItem2 = new CatalogueItem
-      (
-        book1,
-        CatalogueItemStatus.CheckedOut
-      );
-      
-      catalogue.Items.Add(catalogueItem1);
-      catalogue.Items.Add(catalogueItem2);
+      // var catalogueItem1 = new CatalogueItem(
+      //   book1,
+      //   CatalogueItemStatus.Available
+      // );
+      //
+      // var catalogueItem2 = new CatalogueItem
+      // (
+      //
+      //   book1,
+      //   CatalogueItemStatus.CheckedOut
+      // );
+      //
+      // catalogue.Items.Add(catalogueItem1);
+      // catalogue.Items.Add(catalogueItem2);
+
+      var dbContext = new LibraryManagerDbContext(new DbContextOptions<LibraryManagerDbContext>());
     }
   }
 }
