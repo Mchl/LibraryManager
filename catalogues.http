@@ -1,4 +1,4 @@
-POST https://localhost:5001/api/catalogues
+POST {{host}}/catalogues
 Content-Type: application/json
 
 {
@@ -6,25 +6,28 @@ Content-Type: application/json
     "Items": []
 }
 
+> {%
+    client.global.set("id", response.body.id);
+  %}
 
 ###
-GET https://localhost:5001/api/catalogues
+GET {{host}}/catalogues
 
 ###
-GET https://localhost:5001/api/catalogues/1
+GET {{host}}/catalogues/{{id}}
 
 ###
 
-PUT https://localhost:5001/api/catalogues/1
+PUT {{host}}/catalogues/{{id}}
 Content-Type: application/json
 
 {
-  "Id": 1,
+  "Id": {{id}},
   "Name": "Catalogue 2",
   "Items": []
 }
 
 ###
-DELETE https://localhost:5001/api/catalogues/1
+DELETE {{host}}/api/catalogues/{{id}}
 
 
