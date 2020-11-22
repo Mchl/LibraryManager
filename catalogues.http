@@ -1,0 +1,30 @@
+POST https://localhost:5001/api/catalogues
+Content-Type: application/json
+
+{
+    "Name": "Catalogue 1",
+    "Items": []
+}
+
+
+###
+GET https://localhost:5001/api/catalogues
+
+###
+GET https://localhost:5001/api/catalogues/1
+
+###
+
+PUT https://localhost:5001/api/catalogues/1
+Content-Type: application/json
+
+{
+  "Id": 1,
+  "Name": "Catalogue 2",
+  "Items": []
+}
+
+###
+DELETE https://localhost:5001/api/catalogues/1
+
+
