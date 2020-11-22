@@ -5,3 +5,4 @@ riderModule.iml
 /_ReSharper.Caches/
 .idea/
 /LibraryManager.CLI/LibraryManager.sqlite
+/LibraryManager/LibraryManager.sqlite
