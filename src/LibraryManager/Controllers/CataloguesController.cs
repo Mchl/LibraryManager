@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using LibraryManager.Core;
 using LibraryManager.Infrastructure.Data;
+using Microsoft.Extensions.Logging;
 
 namespace LibraryManager.Controllers
 {
@@ -15,16 +16,19 @@ namespace LibraryManager.Controllers
     public class CataloguesController : ControllerBase
     {
         private readonly LibraryManagerDbContext context;
+        private readonly ILogger<CataloguesController> logger;
 
-        public CataloguesController(LibraryManagerDbContext context)
+        public CataloguesController(LibraryManagerDbContext context, ILogger<CataloguesController> logger)
         {
             this.context = context;
+            this.logger = logger;
         }
 
         // GET: api/Catalogues
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Catalogue>>> GetCatalogues()
         {
+            logger.LogInformation("GetCatalogues");
             return await context.Catalogues.ToListAsync();
         }
 
@@ -32,6 +36,7 @@ namespace LibraryManager.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Catalogue>> GetCatalogue(int id)
         {
+            logger.LogInformation("GetCatalogue");
             var catalogue = await context.Catalogues.FindAsync(id);
 
             if (catalogue == null)
@@ -47,6 +52,7 @@ namespace LibraryManager.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutCatalogue(int id, Catalogue catalogue)
         {
+            logger.LogInformation("PutCatalogue");
             if (id != catalogue.Id)
             {
                 return BadRequest();
@@ -78,6 +84,7 @@ namespace LibraryManager.Controllers
         [HttpPost]
         public async Task<ActionResult<Catalogue>> PostCatalogue(Catalogue catalogue)
         {
+            logger.LogInformation("PostCatalogue");
             context.Catalogues.Add(catalogue);
             await context.SaveChangesAsync();
 
@@ -88,6 +95,7 @@ namespace LibraryManager.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteCatalogue(int id)
         {
+            logger.LogInformation("DeleteCatalogue");
             var catalogue = await context.Catalogues.FindAsync(id);
             if (catalogue == null)
             {
