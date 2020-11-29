@@ -28,6 +28,6 @@ Content-Type: application/json
 }
 
 ###
-DELETE {{host}}/api/catalogues/{{id}}
+DELETE {{host}}/catalogues/{{id}}
 
 
