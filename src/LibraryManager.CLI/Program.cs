@@ -11,11 +11,11 @@ namespace LibraryManager.CLI
     {
       var catalogue = new Catalogue("Local catalogue");
 
-      var book1 = new BookRecord
-      {
-        Isbn = "9781491929124",
-        Title = "Site Reliability Engineering"
-      };
+      // var book1 = new BookRecord
+      // {
+      //   Isbn = "9781491929124",
+      //   Title = "Site Reliability Engineering"
+      // };
 
       // var catalogueItem1 = new CatalogueItem(
       //   book1,
