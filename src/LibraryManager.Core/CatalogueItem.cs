@@ -4,7 +4,7 @@ namespace LibraryManager.Core
   {
     public int Id { get; set; }
 
-    public BibliographicRecord BibliographicRecord { get; set; } = new BibliographicRecord();
+    public BibliographicRecord BibliographicRecord { get; set; } = null!;
     public CatalogueItemStatus Status { get; set; }
   }
 }

@@ -3,14 +3,16 @@ using System;
 using LibraryManager.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace LibraryManager.Infrastructure.Migrations
 {
     [DbContext(typeof(LibraryManagerDbContext))]
-    partial class LibraryManagerDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201129152955_update_non_nullable_props")]
+    partial class update_non_nullable_props
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
