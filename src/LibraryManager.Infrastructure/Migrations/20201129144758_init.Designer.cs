@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LibraryManager.Infrastructure.Migrations
 {
     [DbContext(typeof(LibraryManagerDbContext))]
-    [Migration("20201118170413_init")]
+    [Migration("20201129144758_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,10 +24,6 @@ namespace LibraryManager.Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("Discriminator")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
                     b.Property<string>("Name")
                         .HasColumnType("TEXT");
 
@@ -37,8 +33,6 @@ namespace LibraryManager.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("BibliographicRecords");
-
-                    b.HasDiscriminator<string>("Discriminator").HasValue("BibliographicRecord");
                 });
 
             modelBuilder.Entity("LibraryManager.Core.Catalogue", b =>
@@ -78,36 +72,6 @@ namespace LibraryManager.Infrastructure.Migrations
                     b.HasIndex("CatalogueId");
 
                     b.ToTable("CatalogueItems");
-                });
-
-            modelBuilder.Entity("LibraryManager.Core.BookRecord", b =>
-                {
-                    b.HasBaseType("LibraryManager.Core.BibliographicRecord");
-
-                    b.Property<string>("Isbn")
-                        .HasColumnType("TEXT")
-                        .HasColumnName("ProductCode");
-
-                    b.Property<string>("Title")
-                        .HasColumnType("TEXT")
-                        .HasColumnName("Name");
-
-                    b.HasDiscriminator().HasValue("BookRecord");
-                });
-
-            modelBuilder.Entity("LibraryManager.Core.SerialRecord", b =>
-                {
-                    b.HasBaseType("LibraryManager.Core.BibliographicRecord");
-
-                    b.Property<string>("Issn")
-                        .HasColumnType("TEXT")
-                        .HasColumnName("ProductCode");
-
-                    b.Property<string>("Title")
-                        .HasColumnType("TEXT")
-                        .HasColumnName("Name");
-
-                    b.HasDiscriminator().HasValue("SerialRecord");
                 });
 
             modelBuilder.Entity("LibraryManager.Core.CatalogueItem", b =>
