@@ -1,0 +1,33 @@
+POST {{host}}/BibliographicRecords
+Content-Type: application/json
+
+{
+    "Name": "Site Reliability Engineering",
+    "ProductCode": "9781491929124"
+}
+
+> {%
+    client.global.set("id", response.body.id);
+  %}
+
+###
+GET {{host}}/BibliographicRecords
+
+###
+GET {{host}}/BibliographicRecords/{{id}}
+
+###
+
+PUT {{host}}/BibliographicRecords/{{id}}
+Content-Type: application/json
+
+{
+  "Id": {{id}},
+  "Name": "Site Reliability Engineering rev.2",
+  "ProductCode": "9781491929124"
+}
+
+###
+DELETE {{host}}/BibliographicRecords/{{id}}
+
+
